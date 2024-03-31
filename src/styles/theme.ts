@@ -10,4 +10,4 @@ export const theme = {
     'gray-700': '#333333',
     'white-100': '#ffffff',
   },
-}
+} as const
