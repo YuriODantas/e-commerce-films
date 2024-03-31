@@ -2,8 +2,7 @@ import styled from 'styled-components'
 
 export const Container = styled.main`
   background-color: ${({ theme }) => theme.palette['blue-700']};
-  width: 100vw;
-  height: 100vh;
+  min-height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
