@@ -2,15 +2,18 @@ import { createContext, ReactNode, useState } from 'react'
 
 import { ResponseGetFilms } from '../api/films'
 
-interface CartItems extends ResponseGetFilms {
+export interface CartItemsType extends ResponseGetFilms {
   quantity: number
 }
 
 type CartContextType = {
-  cartItems: CartItems[]
-  addNewItemInCart: (newItem: CartItems) => void
+  cartItems: CartItemsType[]
+  addNewItemInCart: (newItem: CartItemsType) => void
   updateQuantityInItemCart: (data: { quantity: number; id: number }) => void
   removeItemCart: (id: number) => void
+  clearCart: () => void
+  buySuccess: boolean
+  changeBuySuccess: (value: boolean) => void
 }
 
 export const CartContext = createContext({} as CartContextType)
@@ -19,9 +22,10 @@ interface IProps {
   children: ReactNode
 }
 export const CartProvider = ({ children }: IProps) => {
-  const [cartItems, setCartItems] = useState<CartItems[]>([])
+  const [cartItems, setCartItems] = useState<CartItemsType[]>([])
+  const [buySuccess, setBuySuccess] = useState(false)
 
-  const addNewItemInCart = (newItem: CartItems) => {
+  const addNewItemInCart = (newItem: CartItemsType) => {
     setCartItems((state) => [...state, newItem])
   }
 
@@ -44,6 +48,14 @@ export const CartProvider = ({ children }: IProps) => {
     setCartItems((state) => state.filter((item) => item.id !== id))
   }
 
+  const changeBuySuccess = (value: boolean) => {
+    setBuySuccess(value)
+  }
+
+  const clearCart = () => {
+    setCartItems([])
+  }
+
   return (
     <CartContext.Provider
       value={{
@@ -51,6 +63,9 @@ export const CartProvider = ({ children }: IProps) => {
         addNewItemInCart,
         updateQuantityInItemCart,
         removeItemCart,
+        buySuccess,
+        changeBuySuccess,
+        clearCart,
       }}
     >
       {children}
