@@ -1,30 +1,44 @@
-# React + TypeScript + Vite
+# e-Films
+This is a film e-commerce project with a simple and intuitive interface.
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Libs and Frameworks
+In this project we used these tools:
 
-Currently, two official plugins are available:
+- ReactJs
+- Styled-components
+- React-router-dom
+- Json-server
+- React-query
+- Axios
+- Eslint
+- Vite
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Running project
 
-## Expanding the ESLint configuration
+To run the project, use the following commands:
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
-
-- Configure the top-level `parserOptions` property like this:
-
-```js
-export default {
-  // other rules...
-  parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-  },
-}
+step 1: Clone this project in you computer.
+```
+git clone urlThisProject
 ```
 
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+step 2: Install all dependencies.
+
+```
+npm i
+# or
+pnpm i
+```
+
+step 3: Run project and Json-server
+```
+npm run dev
+# or
+pnpm run dev
+
+# run json-server
+
+npm run dev:server
+# or
+pnpm run dev:server
+```
