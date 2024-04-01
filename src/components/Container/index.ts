@@ -13,3 +13,12 @@ export const Content = styled.section`
   max-width: 1080px;
   padding: 0 16px;
 `
+
+export const CartContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  background-color: ${({ theme }) => theme.palette['white-100']};
+  padding: 24px;
+  border-radius: 4px;
+  margin-bottom: 20px;
+`
