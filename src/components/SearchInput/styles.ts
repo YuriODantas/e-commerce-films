@@ -16,8 +16,9 @@ export const SearchInputContainer = styled.div`
     outline: none;
     height: 56px;
     flex: 1;
+
     &::placeholder {
-      color: ${({ theme }) => theme.palette['gray-100']};
+      color: ${({ theme }) => theme.palette['gray-200']};
     }
     &:focus {
       outline-color: ${({ theme }) => theme.palette['blue-100']};
