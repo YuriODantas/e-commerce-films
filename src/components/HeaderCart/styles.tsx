@@ -1,15 +1,17 @@
-import { Link } from 'react-router-dom'
 import styled from 'styled-components'
 
-export const CartContainerStyle = styled(Link)`
+export const HeaderCartContainerStyle = styled.button`
+  background-color: transparent;
+  border: none;
   color: ${({ theme }) => theme.palette['white-100']};
   text-decoration: none;
   display: flex;
   gap: 16px;
   justify-content: center;
   align-items: center;
+  cursor: pointer;
 `
-export const CartTextStyle = styled.div`
+export const HeaderCartTextStyle = styled.div`
   display: flex;
   gap: 2px;
   flex-direction: column;
@@ -21,7 +23,7 @@ export const CartTextStyle = styled.div`
     font-size: 0.75rem;
     color: ${({ theme }) => theme.palette['gray-300']};
   }
-  @media (width <= 425px) {
+  @media (width <= 550px) {
     p {
       display: none;
     }
